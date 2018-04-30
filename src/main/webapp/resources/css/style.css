@@ -1,0 +1,121 @@
+.navbar-brand > img {
+    max-height: 200%;
+    height: 200%;
+    width: auto;
+    margin: 0 auto;
+}
+
+header {
+    text-align: justify;
+    letter-spacing: 1px;
+    height: 100px;
+    background: #2c3e50;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+header::after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+}
+
+footer {
+    margin-top: 20px;
+    text-align: justify;
+    letter-spacing: 1px;
+    height: 142px;
+    background: #2c3e50;
+    color: #fff;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.bookmark {
+    height: 212px;
+    background-color: #a7dcff;
+    opacity: 0.9;
+    border: 1px solid #428bca;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    margin: 5px 0;
+    overflow: hidden;
+    flex: 1 1 auto;
+}
+
+.bookmark:hover {
+    -webkit-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    -o-transform: scale(1.05);
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+.bookmark-icon {
+    width: 180px;
+    height: 160px;
+}
+
+.bookmark-icon > img {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 7px;
+}
+
+.bookmark-radius {
+    border-radius: 7px;
+}
+
+.bookmark-primary {
+    border-color: #428bca;
+}
+
+/*Color of shape in right corner of panel changed here to corall*/
+.bookmark-primary .shape {
+    border-color: transparent #ff7f50 transparent transparent;
+}
+
+.bookmark-content {
+    padding: 2px;
+    height: 210px;
+    position: relative;
+}
+
+.bookmark-content > h5 {
+    width: 100%;
+    color: #000000;
+    position: absolute;
+    left: 0;
+    margin-bottom: 2px;
+    right: 0;
+    text-align: center;
+    bottom: 5px;
+    font-weight: bold;
+}
+
+.no-gutter > [class*='col-'] {
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+.add-logo :hover {
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+.bookmark-name {
+    white-space: nowrap; /* Отменяем перенос текста */
+    overflow: hidden; /* Обрезаем содержимое */
+    padding: 5px; /* Поля */
+    text-overflow: ellipsis; /* Многоточие */
+}

@@ -85,15 +85,16 @@ footer {
     position: relative;
 }
 
-.bookmark-content > h5 {
+.bookmark-content > p {
     width: 100%;
+    height: 40px;
     color: #000000;
     position: absolute;
     left: 0;
     margin-bottom: 2px;
     right: 0;
     text-align: center;
-    bottom: 5px;
+    bottom: 2px;
     font-weight: bold;
 }
 
@@ -114,8 +115,14 @@ footer {
 }
 
 .bookmark-name {
-    white-space: nowrap; /* Отменяем перенос текста */
+    white-space: pre-wrap; /* Отменяем перенос текста */
     overflow: hidden; /* Обрезаем содержимое */
-    padding: 5px; /* Поля */
+    padding: 2px; /* Поля */
     text-overflow: ellipsis; /* Многоточие */
+}
+
+.bookmark-name > *:first-child {
+    float: right;
+    width: 100%;
+    margin-left: -5px;
 }

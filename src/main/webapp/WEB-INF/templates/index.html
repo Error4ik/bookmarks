@@ -29,6 +29,11 @@
                             <p class="bookmark-name" th:text="${bookmark.name}"></p>
                         </div>
                     </a>
+                    <div class="button-my">
+                        <i class="glyphicon glyphicon-trash trash-icon" aria-hidden="true"
+                           th:onclick="'testMethod(\'' + ${bookmark.id} + '\');'">
+                        </i>
+                    </div>
                 </div>
             </div>
         </div>

@@ -39,3 +39,17 @@ function closeDialog(name) {
     $('#user-name').html("Hi " + name);
     $('#add-bookmark').show();
 }
+
+function testMethod(id) {
+    $.ajax({
+        url: base_url + "/delete-bookmark",
+        method: "POST",
+        data: {"id": id},
+        success: function (data) {
+            location.reload();
+        },
+        error: function (error) {
+            console.log("ERROR: ", error);
+        }
+    });
+}

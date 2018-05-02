@@ -1,13 +1,6 @@
 package ru.voronin.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
-import javax.persistence.Column;
+import javax.persistence.*;
 import java.util.UUID;
 
 /**
@@ -28,8 +21,9 @@ public class Bookmark {
 
     private String url;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
     @JoinColumn(name = "image_id")
+    @OrderBy("name")
     private Image image;
 
     @Column(name = "user_id")

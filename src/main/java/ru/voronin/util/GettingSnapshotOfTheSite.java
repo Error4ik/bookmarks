@@ -28,10 +28,7 @@ public class GettingSnapshotOfTheSite {
     private int width;
 
     public File getSnapshot(final String url) {
-        String urlToSite = url;
-        if (!urlToSite.startsWith("http")) {
-            urlToSite = "http://" + urlToSite;
-        }
+
         System.setProperty(webDriver, pathToChromeDriver);
         WebDriver driver = new ChromeDriver();
 
@@ -40,7 +37,7 @@ public class GettingSnapshotOfTheSite {
         driver.manage().window().setSize(dim);
 
         try {
-            driver.get(urlToSite);
+            driver.get(url);
         } catch (org.openqa.selenium.TimeoutException te) {
             ((JavascriptExecutor) driver).executeScript("window.stop();");
         } catch (UnhandledAlertException uae) {
@@ -51,7 +48,6 @@ public class GettingSnapshotOfTheSite {
         File snapshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 
         driver.quit();
-
         return snapshot;
     }
 }

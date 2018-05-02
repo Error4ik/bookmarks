@@ -2,10 +2,13 @@ package ru.voronin.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 import ru.voronin.domain.Bookmark;
 import ru.voronin.services.BookmarkService;
+
+import java.util.UUID;
 
 /**
  * Bookmark controller.
@@ -24,5 +27,10 @@ public class BookmarkController {
         final ModelAndView view = new ModelAndView("redirect:/");
         this.bookmarkService.save(this.bookmarkService.prepareToSave(bookmark));
         return view;
+    }
+
+    @RequestMapping("/delete-bookmark")
+    public void deleteBookmark(@RequestParam final UUID id) {
+        this.bookmarkService.deleteBookmarkById(id);
     }
 }

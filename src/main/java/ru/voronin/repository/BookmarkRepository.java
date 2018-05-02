@@ -14,4 +14,6 @@ import java.util.UUID;
  */
 @Repository
 public interface BookmarkRepository extends JpaRepository<Bookmark, UUID> {
+
+    Bookmark getBookmarkById(final UUID id);
 }

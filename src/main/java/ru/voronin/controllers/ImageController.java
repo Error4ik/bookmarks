@@ -6,7 +6,6 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
-import ru.voronin.domain.Image;
 import ru.voronin.services.ImageService;
 
 import java.io.File;
@@ -38,11 +37,10 @@ public class ImageController {
      */
     @GetMapping(value = "/image/{id}", produces = MediaType.IMAGE_JPEG_VALUE)
     public byte[] getPhoto(@PathVariable final UUID id) throws IOException {
-        Image image = this.imageService.getImageById(id);
-        String url = image.getUrl();
-        File file = new File(url);
-        FileInputStream inputStream = new FileInputStream(file);
-
-        return IOUtils.toByteArray(inputStream);
+        byte[] b;
+        try (FileInputStream fis = new FileInputStream(new File(this.imageService.getImageById(id).getUrl()))) {
+            b = IOUtils.toByteArray(fis);
+        }
+        return b;
     }
 }

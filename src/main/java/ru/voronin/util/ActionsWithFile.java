@@ -15,7 +15,7 @@ import java.io.IOException;
  * @since 26.04.2018.
  */
 @Component
-public class WriteFileToDisc {
+public class ActionsWithFile {
 
     private final String fileSeparator = System.getProperty("file.separator");
 
@@ -25,18 +25,22 @@ public class WriteFileToDisc {
     @Value("${file.extension.to.save}")
     private String fileExtension;
 
-    public File write(final BufferedImage snapshot, final String userName) {
+    public File write(final BufferedImage image, final String userName) {
         File dir = new File(saveToPath + userName + fileSeparator);
         if (!dir.exists()) {
             dir.mkdirs();
         }
         File file = new File(dir + fileSeparator + System.currentTimeMillis() + "." + fileExtension);
         try {
-            ImageIO.write(snapshot, fileExtension, file);
+            ImageIO.write(image, fileExtension, file);
         } catch (IOException e) {
             e.printStackTrace();
         }
 
         return file;
+    }
+
+    public void deleteFileFromDisk(final String pathToFile) {
+        new File(pathToFile).delete();
     }
 }

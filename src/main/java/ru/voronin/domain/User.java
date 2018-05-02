@@ -33,6 +33,7 @@ public class User {
 
     @OneToMany(fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id")
+//    @OrderBy("name")
     private List<Bookmark> bookmarks;
 
     public UUID getId() {

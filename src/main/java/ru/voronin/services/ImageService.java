@@ -30,8 +30,4 @@ public class ImageService {
     public void deleteImage(final Image image) {
         this.imageRepository.delete(image);
     }
-
-    public Image getById(final UUID id) {
-        return this.imageRepository.getOne(id);
-    }
 }

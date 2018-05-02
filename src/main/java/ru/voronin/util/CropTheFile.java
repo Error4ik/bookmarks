@@ -34,6 +34,7 @@ public class CropTheFile {
             e.printStackTrace();
         }
 
+        snapshot.delete();
         return image == null ? null : resizeImage(image);
     }
 

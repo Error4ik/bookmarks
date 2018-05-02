@@ -40,7 +40,7 @@ function closeDialog(name) {
     $('#add-bookmark').show();
 }
 
-function testMethod(id) {
+function deleteBookmark(id) {
     $.ajax({
         url: base_url + "/delete-bookmark",
         method: "POST",

@@ -15,7 +15,7 @@
     <project.build.sourceencoding>UTF-8</project.build.sourceencoding>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-    <spring.version>5.3.14</spring.version>
+    <spring.version>5.3.15</spring.version>
     <hibernate.version>5.4.24.Final</hibernate.version>
     <thymeleaf.version>3.0.9.RELEASE</thymeleaf.version>
   </properties>
@@ -78,18 +78,18 @@
       <version>${spring.version}</version>
     </dependency>
 
-    <!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-config -->
+    <!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-core -->
     <dependency>
       <groupId>org.springframework.security</groupId>
-      <artifactId>spring-security-config</artifactId>
-      <version>${spring.version}</version>
+      <artifactId>spring-security-core</artifactId>
+      <version>5.6.1</version>
     </dependency>
 
     <!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-web -->
     <dependency>
       <groupId>org.springframework.security</groupId>
       <artifactId>spring-security-web</artifactId>
-      <version>${spring.version}</version>
+      <version>5.6.1</version>
     </dependency>
 
     <!-- https://mvnrepository.com/artifact/org.springframework.data/spring-data-jpa -->
@@ -137,7 +137,6 @@
       <artifactId>jackson-annotations</artifactId>
       <version>2.9.5</version>
     </dependency>
-
 
     <!-- https://mvnrepository.com/artifact/org.thymeleaf/thymeleaf -->
     <dependency>
